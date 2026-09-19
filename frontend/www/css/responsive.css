@@ -1,0 +1,719 @@
+/* TELLUS Application - Responsive Design
+ * Version 2.0 - Gestion Foncière Mobile App
+ */
+
+/* Base Responsive Settings */
+html {
+    font-size: 16px;
+}
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    html {
+        font-size: 14px;
+    }
+
+    /* Spacing adjustments */
+    :root {
+        --spacing-xs: 0.2rem;
+        --spacing-sm: 0.4rem;
+        --spacing-md: 0.8rem;
+        --spacing-lg: 1.2rem;
+        --spacing-xl: 1.6rem;
+        --spacing-2xl: 2.4rem;
+    }
+
+    /* Home Screen */
+    .home-container {
+        padding: var(--spacing-lg);
+    }
+
+    .home-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .home-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .home-buttons {
+        max-width: 100%;
+    }
+
+    .home-button {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+
+    /* Login Forms */
+    .login-container {
+        padding: var(--spacing-md);
+    }
+
+    .login-form {
+        padding: var(--spacing-lg);
+    }
+
+    /* Dashboard */
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: var(--spacing-md);
+    }
+
+    .card-number {
+        font-size: var(--font-size-2xl);
+    }
+
+    /* Appointments */
+    .appointment-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .appointment-date {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    /* Files */
+    .files-sub-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .file-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Documents */
+    .filter-buttons {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .procedure-card {
+        padding: var(--spacing-md);
+    }
+
+    /* Profile */
+    .profile-content {
+        padding: var(--spacing-lg);
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Modals */
+    .modal {
+        max-width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-content {
+        padding: var(--spacing-lg);
+    }
+
+    /* FAB Button */
+    .fab-button {
+        bottom: var(--spacing-lg);
+        right: var(--spacing-lg);
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Chatbot */
+    .chatbot-button {
+        bottom: var(--spacing-lg);
+        right: var(--spacing-lg);
+        width: 48px;
+        height: 48px;
+    }
+
+    .chatbot-modal {
+        max-width: 95%;
+        max-height: 80vh;
+    }
+
+    .chatbot-messages {
+        height: 200px;
+    }
+
+    /* Supervision Stats */
+    .supervision-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Toast Notifications */
+    .toast-container {
+        left: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    .toast {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    /* Network Status */
+    #network-status {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* Dashboard */
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Files */
+    .files-sub-tabs {
+        flex-wrap: wrap;
+    }
+
+    /* Documents */
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+
+    /* Supervision Stats */
+    .supervision-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Dashboard */
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Files */
+    .files-sub-tabs {
+        flex-wrap: wrap;
+    }
+
+    /* Documents */
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+
+    /* Supervision Stats */
+    .supervision-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Modals */
+    .modal {
+        max-width: 80%;
+    }
+
+    /* Chatbot */
+    .chatbot-modal {
+        max-width: 500px;
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* Dashboard */
+    .dashboard-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Supervision Stats */
+    .supervision-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ai-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* App Spaces */
+    .user-space-container,
+    .agent-space-container,
+    .admin-space-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Dashboard */
+    .dashboard-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Supervision Stats */
+    .supervision-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ai-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* App Spaces */
+    .user-space-container,
+    .agent-space-container,
+    .admin-space-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Modals */
+    .modal {
+        max-width: 800px;
+    }
+
+    .large-modal {
+        max-width: 1000px;
+    }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Home Screen */
+    .home-container {
+        padding: var(--spacing-md);
+    }
+
+    .home-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .home-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .home-buttons {
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .home-button {
+        flex: 1;
+    }
+
+    /* Login Forms */
+    .login-form {
+        padding: var(--spacing-md);
+    }
+
+    /* Tab Navigation */
+    .tab-button {
+        min-width: 60px;
+        font-size: var(--font-size-xs);
+    }
+
+    /* Dashboard */
+    .dashboard-cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .dashboard-card {
+        padding: var(--spacing-sm);
+    }
+
+    .card-number {
+        font-size: var(--font-size-xl);
+    }
+
+    /* FAB Button */
+    .fab-button {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Chatbot */
+    .chatbot-button {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Improve image quality */
+    .home-logo,
+    .header-logo,
+    .profile-avatar {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #E0E0E0;
+        --text-secondary: #B0B0B0;
+        --text-disabled: #6B6B6B;
+        --background-primary: #1E1E1E;
+        --background-secondary: #121212;
+        --background-tertiary: #2C2C2C;
+        --divider-color: #3C3C3C;
+    }
+
+    /* Update component styles for dark mode */
+    .login-form,
+    .profile-content,
+    .dashboard-card,
+    .appointment-card,
+    .file-card,
+    .procedure-card,
+    .notification-card,
+    .stat-card,
+    .ai-stat-card {
+        background-color: var(--background-primary);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea,
+    .search-input {
+        background-color: var(--background-secondary);
+        color: var(--text-primary);
+        border-color: var(--divider-color);
+    }
+
+    .toast {
+        color: white;
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide unnecessary elements */
+    .loading-screen,
+    .home-screen,
+    .app-header,
+    .tab-navigation,
+    .fab-button,
+    .chatbot-button,
+    .toast-container,
+    #network-status,
+    .modal-overlay,
+    .modal {
+        display: none !important;
+    }
+
+    /* Ensure content is visible */
+    .screen {
+        display: block !important;
+    }
+
+    /* Optimize for print */
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .appointment-card,
+    .file-card,
+    .procedure-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    /* Hide interactive elements */
+    .action-button,
+    .filter-button,
+    .files-sub-tab {
+        display: none;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    /* Disable animations */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    /* Remove hover effects */
+    .hover-lift:hover,
+    .hover-grow:hover {
+        transform: none;
+    }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .home-button,
+    .tab-button,
+    .action-button,
+    .filter-button,
+    .files-sub-tab,
+    .profile-button,
+    .language-button {
+        min-height: 48px;
+        min-width: 48px;
+    }
+
+    /* Remove hover effects */
+    .home-button:hover,
+    .tab-button:hover,
+    .action-button:hover,
+    .filter-button:hover,
+    .files-sub-tab:hover,
+    .profile-button:hover,
+    .language-button:hover {
+        transform: none;
+    }
+
+    /* Optimize scrolling */
+    .tab-navigation,
+    .files-sub-tabs,
+    .filter-buttons {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+}
+
+/* Mouse Devices */
+@media (hover: hover) and (pointer: fine) {
+    /* Enable hover effects */
+    .home-button:hover,
+    .tab-button:hover,
+    .action-button:hover,
+    .filter-button:hover,
+    .files-sub-tab:hover,
+    .profile-button:hover,
+    .language-button:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Portrait Orientation */
+@media (orientation: portrait) {
+    /* Optimize for portrait layout */
+    .home-buttons {
+        flex-direction: column;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .files-sub-tabs {
+        flex-direction: column;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Landscape Orientation - Tablet */
+@media (orientation: landscape) and (min-width: 768px) {
+    /* Optimize for landscape layout */
+    .home-buttons {
+        flex-direction: row;
+        max-width: 600px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .files-sub-tabs {
+        flex-direction: row;
+    }
+
+    .filter-buttons {
+        flex-direction: row;
+    }
+}
+
+/* Container Queries (when supported) */
+@container (min-width: 500px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container (min-width: 800px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Custom Scrollbar for Webkit */
+@media (pointer: fine) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--background-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--text-disabled);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary);
+    }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 767.98px) {
+    /* Remove shadows for better performance */
+    .dashboard-card,
+    .appointment-card,
+    .file-card,
+    .procedure-card,
+    .notification-card {
+        box-shadow: none;
+        border: 1px solid var(--divider-color);
+    }
+
+    /* Optimize images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Text sizing */
+    h1, h2, h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Button sizing */
+    .submit-button,
+    .action-button {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+}
+
+/* Tablet-specific optimizations */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+    /* Improved spacing */
+    .tab-content {
+        padding: var(--spacing-xl);
+    }
+
+    /* Card sizing */
+    .dashboard-card,
+    .appointment-card,
+    .file-card,
+    .procedure-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Desktop-specific optimizations */
+@media (min-width: 1024px) {
+    /* Hover effects */
+    .dashboard-card:hover,
+    .appointment-card:hover,
+    .file-card:hover,
+    .procedure-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Improved spacing */
+    .tab-content {
+        padding: var(--spacing-2xl);
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+    /* Limit content width */
+    .user-space-container,
+    .agent-space-container,
+    .admin-space-container {
+        max-width: 1600px;
+    }
+
+    /* Improve readability */
+    .tab-content {
+        padding: var(--spacing-2xl) var(--spacing-2xl);
+    }
+}
+
+/* Small height screens */
+@media (max-height: 600px) {
+    /* Compact spacing */
+    .app-header {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .tab-navigation {
+        top: 48px;
+    }
+
+    .tab-button {
+        padding: var(--spacing-sm);
+        min-width: 60px;
+    }
+
+    /* Compact modals */
+    .modal {
+        max-height: 90vh;
+    }
+
+    .modal-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Large height screens */
+@media (min-height: 900px) {
+    /* Increased spacing */
+    .tab-content {
+        padding: var(--spacing-2xl);
+    }
+
+    /* Larger cards */
+    .dashboard-card,
+    .appointment-card,
+    .file-card,
+    .procedure-card {
+        padding: var(--spacing-xl);
+    }
+}

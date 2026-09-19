@@ -1,0 +1,29 @@
+{
+  "appId": "com.tellus.foncier",
+  "appName": "TELLUS",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_icon_config_sample",
+      "iconColor": "#488AFF",
+      "sound": "beep.wav"
+    },
+    "PushNotifications": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    },
+    "Camera": {
+      "permissions": ["camera", "photos"]
+    }
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": "tellus.keystore",
+      "keystoreAlias": "tellus",
+      "keystoreAliasPassword": "tellus123",
+      "keystorePassword": "tellus123"
+    }
+  }
+}
